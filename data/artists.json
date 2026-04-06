@@ -1,0 +1,16 @@
+[
+    {
+        "id": "a1",
+        "name": "The Ethereals",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAWQkhQmy6UL6wFu8ECEBFnbpHvbCUNoRCVL9yWE8YxIPgmsMx51Ecz2j0yPftwMNUpMgQsNInOLSndKiw-CneS5QuFNMiXLe9yrbc6oRWU6kDMOhcFAOfLV13Z2Lz9JldqY8F3AqKSctyprgmcAbR3JLPJs-hV7Ep0sXVqGT5seP__sxoyIuiEWo8K76AeAr1Va4UpNPz2DKYPZrlSHBdC673cmC63e8B8hbaqD2A9cxqqPWNbnMh6utISrvRz3xuJ7DrrvPNqHpY",
+        "listeners": "12,482,903",
+        "song_ids": ["s5", "s6", "s7"]
+    },
+    {
+        "id": "a2",
+        "name": "Etheric Stream",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDnhUHVVYG8-OdjreDGetkq5Zn_2VllsSu8gPOTxJjVI9miOzmLP85U4CezrOuBkZVBtc_w6uuQt2gWzcaTywqdU7j2rjvGlUtsAfSI0kC0GHSSgNHPzlH1CjrWVpauhyrcePIbhowNwh518MNMywpNUlwEhQpCNC5ro2LZe4DrV9UTFwM0XG1NjosC_-BbbbC68h0FCY13xECIsz2aMiiGCGDdAQvreHTfXWnYnRWW5o28xcTAvka5p9XxeN7BUcsmr8lhcRzPd3g",
+        "listeners": "2,190,000",
+        "song_ids": ["s1"]
+    }
+]

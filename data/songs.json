@@ -1,0 +1,69 @@
+[
+    {
+        "id": "s1",
+        "title": "Neon Velocity",
+        "artist": "Etheric Stream",
+        "duration": "3:42",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCA4Oo80WZq7yaI2AJNHqplhE1Sjbft5HTIMg4bWkEvh-xCOyvujJ4KqeB0WnyNU0B11OuDD1BjuQ6bPiltBbQwOdTCyVYXubxCl15hSWFcgpJSSc1lp-6TQJ130ni8lvg6P05-FNvcMgcJjQFdDZQ4UXwBEBeYVQzgg0g5bQ2QS_jwmvxttK16iJoLcubvO4gt0y2fCgs7BsqnenW7aWKfGxPy_aivq0cfhfPFIzUWTwGVIlq6BejprlO6nyfw7s6J1uzyHYrrxVc",
+        "album": "Prism Dynamics",
+        "date_added": "2 days ago"
+    },
+    {
+        "id": "s2",
+        "title": "Subterranean Beats",
+        "artist": "The Foundation",
+        "duration": "5:18",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuA1QGZKe3qEcYwsuZgu2TaDQ_25Qd1aXWeyifU7XQaratk5kkw7t3g5yv-s7D6eI4dv7RNJACn8JEcMRlCGLGljRWUdYnFiDHdupHJQPw8s4-8-BKOvq1t5vvTws1gulCpwIGERydjLDXs-N7bGp9-lMU2_X01UEDgIVXHh9qUnQzw8EABJotR9-Okrsqabgycw_KCZE_CNWCSFdlb4v6LoKWYyiB2_fJ5XgW9qMY0yqVUfKFm1_cOb7oc0W0PfOYHm3_c7AZuB57U",
+        "album": "The Foundation",
+        "date_added": "Oct 12, 2023"
+    },
+    {
+        "id": "s3",
+        "title": "Crystal Lattice",
+        "artist": "Vertex",
+        "duration": "4:05",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCQis6dLXsTVweGpqyvkMtA6PRi6z_3mvcQtiZoNthgk7GC6JD7iTRkD-UA1gifBUglZcrgzGzOpryWDeupn7vbrt-FNhIZPtboSSj3_koJspnJ6CUgpKaZ5_eskRhkaotHldszZwJbUbp5sUHAAG9Hw4wuZ8u1ylSAg118EXGFx2sxDG5UruwSvqArxLUMpaFoga6kKWb1dM6utpi2QOSEdTGW2hcgICuX_JBP0bhbHA0Mbu9LRZ21hGjpDtbGvG9E7nrSQHRXpkk",
+        "album": "Structural Sound",
+        "date_added": "Oct 10, 2023"
+    },
+    {
+        "id": "s4",
+        "title": "Midnight Synthesis",
+        "artist": "Alex Rivera",
+        "duration": "6:22",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuCJirJJFe2Lt-d4JWq-zFsNvr9RhvbbdKFFX2hZJur59djF6GY9vaoqcqPxTtoNu77QdHM-NMm8SCOqX187DER9OT73xxifWJrmFU0lLym6kSqEN3PGEdQcdZOP0sFmXsLOEniqraqRafh8VzZJHthV6JOfDtvJx_V5U6q52jZf-YLEBUcQ7zsrjVulWHrmXoOJnnEFsBTRPFbTM98-0tF7X2EOW6iM-n302BAvyvmN5t8VNJ0CC94bmSrtM7SN5b_uhPAFrYYlx0s",
+        "album": "Obsidian EP",
+        "date_added": "Oct 8, 2023"
+    },
+    {
+        "id": "s5",
+        "title": "Midnight Spectrum",
+        "artist": "The Ethereals",
+        "duration": "3:42",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuDnhUHVVYG8-OdjreDGetkq5Zn_2VllsSu8gPOTxJjVI9miOzmLP85U4CezrOuBkZVBtc_w6uuQt2gWzcaTywqdU7j2rjvGlUtsAfSI0kC0GHSSgNHPzlH1CjrWVpauhyrcePIbhowNwh518MNMywpNUlwEhQpCNC5ro2LZe4DrV9UTFwM0XG1NjosC_-BbbbC68h0FCY13xECIsz2aMiiGCGDdAQvreHTfXWnYnRWW5o28xcTAvka5p9XxeN7BUcsmr8lhcRzPd3g",
+        "streams": "4,203,190"
+    },
+    {
+        "id": "s6",
+        "title": "Neon Horizon",
+        "artist": "The Ethereals",
+        "duration": "4:15",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuByeUmYT0qqN87J20SyQ37oy-NSHE9kXGy_B-2iRZoQyfDWe-FjTU4aFBQ6vimt_FuMWm5pVCJrz_SV3Beor-BOS15CgLSFCJTcT-khawGGlZNe7wKJrrdEcEqpeVGF5JMwjjymmDrYlxrUujtDfWC117-3lkv6sms4UWZba6se8hiVSyakKboz9nSNHCTxIWmBaQBiAyud_emzVaf2KDkNjnvztXquMd9H3JsnGLdneh1sOv4Z-Jhu6l5PCgHM3laj-VM5CUPp70I",
+        "streams": "2,940,211"
+    },
+    {
+        "id": "s7",
+        "title": "Prism Drift",
+        "artist": "The Ethereals",
+        "duration": "3:18",
+        "audio": "assets/audio/placeholder.mp3",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuBa-JuWn8YIU5wG3-wzdyCWDw3vx17Nhaczer7dsmoUn3nyzhtosE90-iO5U76HRnc6wq-4q6hWXin0-u2SFGX2vdwI5sCteXQrXcrphtq5yBWPEiE0mxifOR9WcBG-F_SlAAmynnoBiu_-yhMujnH-tGAueVCHoX6gObeArPkKT9aMzI_hpQLwRvMA-NdnzmVKdD6mOsiXW5qdB2AmVSB7iumb4LDe6BTU2ap36cvGMF-W7v4yirg_JMYKfaW4dFkVL0Av73ULQkg",
+        "streams": "1,502,334"
+    }
+]

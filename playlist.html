@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Prism - Emerald Echoes</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-primary/30">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+    <!-- Logo -->
+    <div class="sidebar-logo">
+        <span class="logo-text">Sonic Prism</span>
+        <span class="logo-icon material-symbols-outlined">music_note</span>
+    </div>
+    
+    <!-- Main Navigation -->
+    <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link active">
+            <span class="material-symbols-outlined">home</span>
+            <span class="nav-text">Home</span>
+        </a>
+        
+        <a href="search.html" class="nav-link">
+            <span class="material-symbols-outlined">search</span>
+            <span class="nav-text">Search</span>
+        </a>
+        
+        <a href="library.html" class="nav-link">
+            <span class="material-symbols-outlined">library_music</span>
+            <span class="nav-text">Library</span>
+        </a>
+        
+        <!-- Playlists Section -->
+        <div class="nav-section-divider">
+            <span class="nav-section-title">Playlists</span>
+        </div>
+        
+        <a href="#" class="nav-link">
+            <span class="material-symbols-outlined">add_box</span>
+            <span class="nav-text">Create Playlist</span>
+        </a>
+        
+        <a href="#" class="nav-link">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="nav-text">Liked Songs</span>
+        </a>
+    </nav>
+    
+    <!-- User Profile -->
+    <div class="sidebar-profile">
+        <div class="profile-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGzt3RE6mzmLuVX2bwtz0L0tGP7j90ar3tVcqx_5Ws_dFH-dKhsnIseiSb1fPsWA023zjyZXgDnLXSMW3wE07H3OlwAlRVOgF8R2SYLyXTsO3QG8TTyh5PjJeM85qfQmNzMzXkoEqQkhuEbun12VqjDCImDpRLZMjn8WuoDyaQwCa1U_BVnvCNQeuMBB8kejIOPaMbUjC5H1Iauab1wBvrg8V8R_YvlCVYjMc7vkPvQLVk_TFovBpnlkudgdaeETkwn-YFXfJMmU0" alt="User Profile" class="profile-avatar">
+            <div class="profile-info">
+                <span class="profile-name">Alex Rivera</span>
+                <span class="profile-status">Premium Member</span>
+            </div>
+        </div>
+    </div>
+</aside>
+
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-header">
+    <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" class="search-input" placeholder="Search for songs...">
+        </div>
+    </div>
+    
+    <div class="header-right">
+        <!-- Notifications -->
+        <button class="header-icon-btn">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-dot"></span>
+        </button>
+        
+        <!-- Settings -->
+        <button class="header-icon-btn">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+    </div>
+</header>
+
+        
+        <!-- Page Content -->
+        <div class="content-wrapper playlist-page" id="app-content">
+            <!-- Hero Header -->
+            <section class="playlist-hero">
+                <div class="playlist-ambient-glow"></div>
+                <div class="playlist-artwork">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4WAfOLfxBaQFCa-rVak3oL9tsz86OuyfALoJ9-alo45r90e_aIrhjFVLytWhBsfc43CvxhaXtHgKg0PpZSscDNP_FDl5L6Beq91_c8wAyO3V7jraln03CbYawoXGhRsKtd9dCih0XLSTKLvpil-GmQb7pKLLI3D7tH0zhLZrjy1bVLan8QZ0Czj_uTxJa2YxDasUykHMsxvbMg5iqrWUYDtRsDWSEeU8c8jLYjozZdoj0noQMPypsJ3h0WVHdNGkDvbZ6uHBIOP0" alt="Playlist Artwork">
+                    <div class="playlist-artwork-overlay"></div>
+                </div>
+                <div class="playlist-hero-info">
+                    <span class="playlist-badge">Public Playlist</span>
+                    <h1 class="playlist-large-title">Emerald Echoes</h1>
+                    <p class="playlist-hero-desc">Curated selection of progressive house and melodic techno. Perfect for deep focus and midnight drives.</p>
+                    <div class="playlist-meta">
+                        <span class="highlight">Sonic Prism</span>
+                        <span class="dot"></span>
+                        <span>42 songs, 3 hr 14 min</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Action Controls -->
+            <section class="playlist-actions">
+                <button class="btn-play-large">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Play
+                </button>
+                <button class="btn-shuffle-large">
+                    <span class="material-symbols-outlined">shuffle</span>
+                    Shuffle
+                </button>
+                <div class="playlist-icon-actions">
+                    <button class="btn-icon-circle"><span class="material-symbols-outlined">favorite</span></button>
+                    <button class="btn-icon-circle"><span class="material-symbols-outlined">more_horiz</span></button>
+                </div>
+            </section>
+            
+            <!-- Track List Table -->
+            <section class="track-list-section">
+                <!-- Table Header -->
+                <div class="track-list-header">
+                    <div class="col-num">#</div>
+                    <div class="col-title">Title</div>
+                    <div class="col-album hidden-mobile">Album</div>
+                    <div class="col-date hidden-tablet">Date Added</div>
+                    <div class="col-time"><span class="material-symbols-outlined text-sm">schedule</span></div>
+                </div>
+                
+                <div class="track-list-body">
+                    <!-- Track 1 -->
+                    <div class="track-row">
+                        <div class="col-num">1</div>
+                        <div class="col-title track-info-cell">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4Oo80WZq7yaI2AJNHqplhE1Sjbft5HTIMg4bWkEvh-xCOyvujJ4KqeB0WnyNU0B11OuDD1BjuQ6bPiltBbQwOdTCyVYXubxCl15hSWFcgpJSSc1lp-6TQJ130ni8lvg6P05-FNvcMgcJjQFdDZQ4UXwBEBeYVQzgg0g5bQ2QS_jwmvxttK16iJoLcubvO4gt0y2fCgs7BsqnenW7aWKfGxPy_aivq0cfhfPFIzUWTwGVIlq6BejprlO6nyfw7s6J1uzyHYrrxVc" alt="Track Art">
+                            <div class="track-info-text">
+                                <span class="track-name">Neon Velocity</span>
+                                <span class="track-artist">Etheric Stream</span>
+                            </div>
+                        </div>
+                        <div class="col-album hidden-mobile">Prism Dynamics</div>
+                        <div class="col-date hidden-tablet">2 days ago</div>
+                        <div class="col-time">
+                            <span>3:42</span>
+                            <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Track 2 -->
+                    <div class="track-row">
+                        <div class="col-num">2</div>
+                        <div class="col-title track-info-cell">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1QGZKe3qEcYwsuZgu2TaDQ_25Qd1aXWeyifU7XQaratk5kkw7t3g5yv-s7D6eI4dv7RNJACn8JEcMRlCGLGljRWUdYnFiDHdupHJQPw8s4-8-BKOvq1t5vvTws1gulCpwIGERydjLDXs-N7bGp9-lMU2_X01UEDgIVXHh9qUnQzw8EABJotR9-Okrsqabgycw_KCZE_CNWCSFdlb4v6LoKWYyiB2_fJ5XgW9qMY0yqVUfKFm1_cOb7oc0W0PfOYHm3_c7AZuB57U" alt="Track Art">
+                            <div class="track-info-text">
+                                <span class="track-name">Subterranean Beats</span>
+                                <span class="track-artist">The Foundation</span>
+                            </div>
+                        </div>
+                        <div class="col-album hidden-mobile">The Foundation</div>
+                        <div class="col-date hidden-tablet">Oct 12, 2023</div>
+                        <div class="col-time">
+                            <span>5:18</span>
+                            <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Track 3 -->
+                    <div class="track-row">
+                        <div class="col-num">3</div>
+                        <div class="col-title track-info-cell">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQis6dLXsTVweGpqyvkMtA6PRi6z_3mvcQtiZoNthgk7GC6JD7iTRkD-UA1gifBUglZcrgzGzOpryWDeupn7vbrt-FNhIZPtboSSj3_koJspnJ6CUgpKaZ5_eskRhkaotHldszZwJbUbp5sUHAAG9Hw4wuZ8u1ylSAg118EXGFx2sxDG5UruwSvqArxLUMpaFoga6kKWb1dM6utpi2QOSEdTGW2hcgICuX_JBP0bhbHA0Mbu9LRZ21hGjpDtbGvG9E7nrSQHRXpkk" alt="Track Art">
+                            <div class="track-info-text">
+                                <span class="track-name">Crystal Lattice</span>
+                                <span class="track-artist">Vertex</span>
+                            </div>
+                        </div>
+                        <div class="col-album hidden-mobile">Structural Sound</div>
+                        <div class="col-date hidden-tablet">Oct 10, 2023</div>
+                        <div class="col-time">
+                            <span>4:05</span>
+                            <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Track 4 -->
+                    <div class="track-row">
+                        <div class="col-num">4</div>
+                        <div class="col-title track-info-cell">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJirJJFe2Lt-d4JWq-zFsNvr9RhvbbdKFFX2hZJur59djF6GY9vaoqcqPxTtoNu77QdHM-NMm8SCOqX187DER9OT73xxifWJrmFU0lLym6kSqEN3PGEdQcdZOP0sFmXsLOEniqraqRafh8VzZJHthV6JOfDtvJx_V5U6q52jZf-YLEBUcQ7zsrjVulWHrmXoOJnnEFsBTRPFbTM98-0tF7X2EOW6iM-n302BAvyvmN5t8VNJ0CC94bmSrtM7SN5b_uhPAFrYYlx0s" alt="Track Art">
+                            <div class="track-info-text">
+                                <span class="track-name">Midnight Synthesis</span>
+                                <span class="track-artist">Alex Rivera</span>
+                            </div>
+                        </div>
+                        <div class="col-album hidden-mobile">Obsidian EP</div>
+                        <div class="col-date hidden-tablet">Oct 8, 2023</div>
+                        <div class="col-time">
+                            <span>6:22</span>
+                            <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Music Player -->
+    <footer class="music-player">
+    <!-- Currently Playing -->
+    <div class="player-left">
+        <div class="now-playing-thumbnail">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByes9g8Pr4SEk5AIegJWqwgUCAUMPOw3azms_Of3v0bG8fNpzPesXlR5KqGGaTlVAuRBTgK6r6VAPvZbyZn8l1q4njwXcQpudYrxHv7papSuHCsCRfnQB85AxIei_N28UoN0KM9-S9Vf_kuV7wG_p7Euhn9GwKNKS_8zL2iON9Vb7imaXou1JSGFDqsXeZFuqano2LfRagDWn1mPhr52A_Mg9Zs7exeDkvL8g1zjdOEJZzyVWLXS7CM_jRjQrUWkxUPSPWfHWU8zI" alt="Now Playing">
+        </div>
+        <div class="now-playing-info">
+            <span class="now-playing-title">Solar Flare</span>
+            <span class="now-playing-artist">Neon Pulse</span>
+        </div>
+        <button class="icon-btn favorite-btn-player">
+            <span class="material-symbols-outlined">favorite</span>
+        </button>
+    </div>
+    
+    <!-- Playback Controls -->
+    <div class="player-center">
+        <div class="playback-controls">
+            <button class="control-btn shuffle-btn">
+                <span class="material-symbols-outlined">shuffle</span>
+            </button>
+            
+            <button class="control-btn prev-btn">
+                <span class="material-symbols-outlined">skip_previous</span>
+            </button>
+            
+            <button class="control-btn play-btn-main">
+                <span class="material-symbols-outlined">play_circle</span>
+            </button>
+            
+            <button class="control-btn next-btn">
+                <span class="material-symbols-outlined">skip_next</span>
+            </button>
+            
+            <button class="control-btn repeat-btn">
+                <span class="material-symbols-outlined">repeat</span>
+            </button>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <span class="progress-time">1:24</span>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="progress-handle"></div>
+            </div>
+            <span class="progress-time">4:15</span>
+        </div>
+    </div>
+    
+    <!-- Secondary Controls -->
+    <div class="player-right">
+        <button class="icon-btn">
+            <span class="material-symbols-outlined">lyrics</span>
+        </button>
+        
+        <button class="icon-btn">
+            <span class="material-symbols-outlined">queue_music</span>
+        </button>
+        
+        <div class="volume-control">
+            <span class="material-symbols-outlined">volume_up</span>
+            <div class="volume-bar">
+                <div class="volume-fill"></div>
+            </div>
+        </div>
+        
+        <button class="icon-btn">
+            <span class="material-symbols-outlined">fullscreen</span>
+        </button>
+    </div>
+</footer>
+
+    
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

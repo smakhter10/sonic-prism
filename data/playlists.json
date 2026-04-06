@@ -1,0 +1,26 @@
+[
+    {
+        "id": "p1",
+        "name": "Emerald Echoes",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuD4WAfOLfxBaQFCa-rVak3oL9tsz86OuyfALoJ9-alo45r90e_aIrhjFVLytWhBsfc43CvxhaXtHgKg0PpZSscDNP_FDl5L6Beq91_c8wAyO3V7jraln03CbYawoXGhRsKtd9dCih0XLSTKLvpil-GmQb7pKLLI3D7tH0zhLZrjy1bVLan8QZ0Czj_uTxJa2YxDasUykHMsxvbMg5iqrWUYDtRsDWSEeU8c8jLYjozZdoj0noQMPypsJ3h0WVHdNGkDvbZ6uHBIOP0",
+        "description": "Curated selection of progressive house and melodic techno. Perfect for deep focus and midnight drives.",
+        "creator": "Sonic Prism",
+        "song_ids": ["s1", "s2", "s3", "s4"]
+    },
+    {
+        "id": "p2",
+        "name": "Urban Jazz Explorations",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuBQLwwf4116nDCIfEY4S1zUYFBWLR8MsDITXundkW6a2Re9h_qPevPNQ5GOs70DMIDxYW4JFDBMSZqzeH_dZza79sZpxNRUzzAAdebD9I-NJ1A6FAJbvpGkTka4IXzzp_vN-OYm7KyxWRvrnDYyZuo77kxcZHa6GSvjLhUkwwkZ1KVOXIMj1PN89pJ823jwo3i28k29NbWWSwyLEzmHSzCAhrmX-nCHGbxfXXw532n0-aUhs8XTxe5BF0zqhVwiIleoaeCqj55Y6Xw",
+        "description": "The finest contemporary jazz beats.",
+        "creator": "Sonic Prism",
+        "song_ids": ["s5", "s6"]
+    },
+    {
+        "id": "p3",
+        "name": "Digital Pulse 2024",
+        "cover": "https://lh3.googleusercontent.com/aida-public/AB6AXuDz-hRW8ZZMqaJ7l9HRlEoEn6vBmZSA7o-MY4PT9GUTgEkaGU2Lha74k6dDbyxFtomgC7Rgml_rPLKlaUKupg4lIDyM4fbLLkMoyhf3FeRU9KT0UEGiPpDExiomtafrXEfyat2h9VoAlHYxdL-1NF9mx_Jhgsx65c1e152pJshoY8QcKHE7BXFxJuH4VqLD9Cnqq7EiMYHcVhEuOojQu9tx0O5MGR6DmQAadWew7Sk2_NgBzugUBTmwgqnxZbQRNxJj2uggCrA8rWM",
+        "description": "Techno core for your soul.",
+        "creator": "Sarah Chen",
+        "song_ids": ["s1", "s7"]
+    }
+]
