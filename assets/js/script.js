@@ -12,7 +12,8 @@ const AppState = {
     isPlaying: false,
     isShuffled: false,
     isRepeating: false,
-    volume: 1
+    volume: localStorage.getItem('sonic_volume') || 1,
+    likedSongs: JSON.parse(localStorage.getItem('sonic_favorites') || '[]')
 };
 
 // ======================================
@@ -45,8 +46,49 @@ async function loadData() {
         };
         AppState.audio.addEventListener('ended', playNext);
         AppState.audio.addEventListener('timeupdate', updateProgressBar);
+        AppState.audio.volume = AppState.volume;
     } catch (e) {
         console.error("Failed to load backend data", e);
+    }
+}
+
+function toggleLike(songId) {
+    const index = AppState.likedSongs.indexOf(songId);
+    if (index === -1) {
+        AppState.likedSongs.push(songId);
+    } else {
+        AppState.likedSongs.splice(index, 1);
+    }
+    localStorage.setItem('sonic_favorites', JSON.stringify(AppState.likedSongs));
+    syncHeartIcons();
+}
+
+function isSongLiked(songId) {
+    return AppState.likedSongs.includes(songId);
+}
+
+function syncHeartIcons() {
+    document.querySelectorAll('.favorite-btn, .fav-icon, .player-heart').forEach(btn => {
+        // We need to know which song this icon belongs to.
+        // For simplicity in this SPA, we check the closest data-id or the current playing song if it's the player heart.
+        const songId = btn.getAttribute('data-id') || (AppState.currentQueue[AppState.currentTrackIndex]?.id);
+        if (songId && isSongLiked(songId)) {
+            btn.classList.add('active');
+            btn.style.color = 'var(--primary)';
+            btn.textContent = 'favorite'; // Filled icon
+        } else {
+            btn.classList.remove('active');
+            btn.style.color = 'inherit';
+            btn.textContent = 'favorite'; // Usually outline is handled by CSS or font-variation
+        }
+    });
+
+    // Handle heart icon in the main player specifically if needed
+    const playerHeart = document.querySelector('.player-heart span');
+    if (playerHeart) {
+        const current = AppState.currentQueue[AppState.currentTrackIndex];
+        playerHeart.style.fontVariationSettings = isSongLiked(current?.id) ? "'FILL' 1" : "'FILL' 0";
+        playerHeart.style.color = isSongLiked(current?.id) ? 'var(--primary)' : 'inherit';
     }
 }
 
@@ -59,29 +101,35 @@ function setupSPARouting() {
         if (!link) return;
         
         const url = link.getAttribute('href');
-        // Ignore external or hash links
         if (!url || url.startsWith('http') || url.startsWith('#')) return;
         
         e.preventDefault();
-        
-        // Special case for routing query params from cards via custom dataset
-        if (link.dataset.routeUrl) {
-            await navigateTo(link.dataset.routeUrl);
-            return;
-        }
-        
         await navigateTo(url);
-        
-        // Update active sidebar state
-        document.querySelectorAll('.sidebar-nav .nav-link').forEach(el => el.classList.remove('active'));
-        if (link.classList.contains('nav-link')) {
-            link.classList.add('active');
-        }
     });
 
     window.addEventListener('popstate', async () => {
         await navigateTo(window.location.pathname + window.location.search, false);
     });
+
+    // Header Search Binding
+    const globalSearch = document.getElementById('globalSearchInput') || document.querySelector('.search-input');
+    if (globalSearch) {
+        globalSearch.addEventListener('keypress', e => {
+            if (e.key === 'Enter') {
+                const query = globalSearch.value.trim();
+                if (query) navigateTo(`search.html?q=${encodeURIComponent(query)}`);
+            }
+        });
+    }
+
+    // Player Heart Binding
+    const playerHeart = document.querySelector('.player-heart');
+    if (playerHeart) {
+        playerHeart.onclick = () => {
+            const current = AppState.currentQueue[AppState.currentTrackIndex];
+            if (current) toggleLike(current.id);
+        };
+    }
 }
 
 async function navigateTo(url, pushState = true) {
@@ -110,9 +158,6 @@ async function navigateTo(url, pushState = true) {
     }
 }
 
-// ======================================
-// DYNAMIC CONTENT RENDERING
-// ======================================
 function renderDynamicContent() {
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
@@ -123,6 +168,14 @@ function renderDynamicContent() {
         renderArtistPage(params.get('id') || 'a1');
     } else if (path.includes('search.html')) {
         setupSearchPage();
+        const query = params.get('q');
+        if (query) {
+            const input = document.getElementById('search-input-large');
+            if (input) input.value = query;
+            performSearch(query);
+            const global = document.getElementById('globalSearchInput');
+            if (global) global.value = query;
+        }
     } else if (path.includes('library.html')) {
         renderLibraryPage();
     } else {
@@ -276,41 +329,92 @@ function renderArtistPage(artistId) {
         tlist.appendChild(row);
     });
 
-    const mainPlayBtn = document.querySelector('.btn-play-large, .btn-play-large-gradient');
-    if(mainPlayBtn) {
-        mainPlayBtn.onclick = () => {
-            const queue = artist.song_ids.map(id => getSongById(id));
-            playQueue(queue, 0);
-        };
+    // --- Render Discography (Albums) ---
+    const albumGrid = document.querySelector('.artist-albums-grid');
+    if (albumGrid) {
+        albumGrid.innerHTML = '';
+        // Find unique albums for this artist
+        const artistSongs = artist.song_ids.map(id => getSongById(id)).filter(s => s);
+        const albums = [...new Set(artistSongs.map(s => s.album))].filter(a => a);
+
+        albums.forEach(albumName => {
+            const albumSongs = artistSongs.filter(s => s.album === albumName);
+            const card = document.createElement('div');
+            card.className = 'playlist-card group-hover-play cursor-pointer';
+            card.innerHTML = `
+                <div class="playlist-image">
+                    <img src="${albumSongs[0].cover}" alt="${albumName}">
+                    <button class="play-btn"><span class="material-symbols-outlined">play_arrow</span></button>
+                </div>
+                <h4>${albumName}</h4>
+                <p>Album • ${artist.name}</p>
+            `;
+            card.onclick = () => {
+                // For now, playing an album just starts the first song
+                playQueue(albumSongs, 0);
+            };
+            albumGrid.appendChild(card);
+        });
     }
+
+    const mainPlayBtn = document.querySelector('.btn-play-large, .btn-play-large-gradient');
+    // Bind heart toggle
+    tlist.querySelectorAll('.fav-icon').forEach((btn, i) => {
+        const sId = artist.song_ids[i];
+        btn.setAttribute('data-id', sId);
+        btn.onclick = (e) => {
+            e.stopPropagation();
+            toggleLike(sId);
+        };
+    });
+    syncHeartIcons();
 }
 
 function renderLibraryPage() {
-    // Populate library grid with playlists
     const grid = document.querySelector('.library-grid');
     if (!grid) return;
     
-    // Clear regular cards (keep featured if needed)
-    while (grid.children.length > 2) {
-        grid.removeChild(grid.lastChild);
-    }
+    grid.innerHTML = ''; 
     
+    const likedCount = AppState.likedSongs.length;
+    const likedCard = document.createElement('div');
+    likedCard.className = 'library-featured-card animate-float';
+    likedCard.onclick = () => renderLikedSongsView();
+    likedCard.innerHTML = `
+        <div class="featured-gradient"></div>
+        <div class="featured-content">
+            <h2 class="text-4xl font-black mb-2">Liked Songs</h2>
+            <p class="text-lg opacity-80">${likedCount} liked songs</p>
+        </div>
+        <button class="play-btn play-btn-large floating-play">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    `;
+    grid.appendChild(likedCard);
+
     AppState.playlists.forEach(pl => {
         const card = document.createElement('div');
         card.className = 'playlist-card group-hover-play cursor-pointer';
         card.innerHTML = `
-            <div class="playlist-card-image">
+            <div class="playlist-image">
                 <img src="${pl.cover}" alt="${pl.name}">
-                <div class="play-overlay"><span class="material-symbols-outlined">play_circle</span></div>
+                <button class="play-btn"><span class="material-symbols-outlined">play_arrow</span></button>
             </div>
-            <div class="playlist-card-content">
-                <h4 class="playlist-title">${pl.name}</h4>
-                <p class="playlist-description">By ${pl.creator}</p>
-            </div>
+            <h4>${pl.name}</h4>
+            <p>${pl.description}</p>
         `;
         card.onclick = () => navigateTo(`playlist.html?id=${pl.id}`);
         grid.appendChild(card);
     });
+}
+
+function renderLikedSongsView() {
+    const likedSongs = AppState.likedSongs.map(id => getSongById(id)).filter(s => s);
+    if (likedSongs.length === 0) {
+        alert("You haven't liked any songs yet!");
+        return;
+    }
+    navigateTo('playlist.html?id=liked');
 }
 
 function setupSearchPage() {
@@ -403,6 +507,9 @@ function loadAndPlayTrack() {
     AppState.audio.src = track.audio;
     AppState.audio.load();
     const playPromise = AppState.audio.play();
+
+    syncHeartIcons();
+    syncPlayPauseButton();
 
     // Catch DOMException if placeholder missing
     if (playPromise !== undefined) {
@@ -575,8 +682,23 @@ function initGlobalScripts() {
             
             AppState.volume = percentage;
             AppState.audio.volume = percentage;
+            localStorage.setItem('sonic_volume', percentage);
             document.querySelector('.volume-fill').style.width = (percentage * 100) + '%';
         });
+    }
+
+    const volumeIcon = document.querySelector('.volume-control .material-symbols-outlined');
+    if (volumeIcon) {
+        volumeIcon.style.cursor = 'pointer';
+        volumeIcon.onclick = () => {
+            if (AppState.audio.volume > 0) {
+                AppState.audio.volume = 0;
+                volumeIcon.textContent = 'volume_off';
+            } else {
+                AppState.audio.volume = AppState.volume;
+                volumeIcon.textContent = 'volume_up';
+            }
+        };
     }
 
     // Mobile Sidebar
