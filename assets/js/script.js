@@ -101,6 +101,7 @@ async function navigateTo(url, pushState = true) {
             // Re-bind page specific events and render content based on templates
             initPageScripts();
             renderDynamicContent();
+            updateSidebarActive();
             window.scrollTo(0, 0);
         }
     } catch (e) {
@@ -128,6 +129,21 @@ function renderDynamicContent() {
         // Assume Home (index.html)
         renderHomePage();
     }
+}
+
+function updateSidebarActive() {
+    const path = window.location.pathname;
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && path.includes(href.replace('.php', '.html'))) {
+            link.classList.add('active');
+            link.style.color = 'var(--primary)';
+        } else {
+            link.classList.remove('active');
+            link.style.color = 'var(--on-surface-variant)';
+        }
+    });
 }
 
 function getSongById(id) {
@@ -409,19 +425,19 @@ function simulatePlayback() {
     syncPlayPauseButton();
     
     // Quick simulator if audio file errors out
-    let simTime = 0;
+    window.simTime = 0;
     const simDuration = 200; // 3 min 20 sec
     
     clearInterval(window.simInterval);
     window.simInterval = setInterval(() => {
         if(!AppState.isPlaying) return;
-        simTime += 1;
-        const perc = (simTime / simDuration) * 100;
+        window.simTime += 1;
+        const perc = (window.simTime / simDuration) * 100;
         document.querySelector('.progress-fill').style.width = perc + '%';
         document.querySelector('.progress-handle').style.left = perc + '%';
         
-        let m = Math.floor(simTime / 60);
-        let s = Math.floor(simTime % 60);
+        let m = Math.floor(window.simTime / 60);
+        let s = Math.floor(window.simTime % 60);
         document.querySelector('.time-current').textContent = `${m}:${s.toString().padStart(2, '0')}`;
         
         if (perc >= 100) {
@@ -540,8 +556,12 @@ function initGlobalScripts() {
             const clickX = e.clientX - rect.left;
             const percentage = clickX / rect.width;
             
-            if (AppState.audio.duration) {
+            if (AppState.audio.duration && !isNaN(AppState.audio.duration)) {
                 AppState.audio.currentTime = AppState.audio.duration * percentage;
+            } else {
+                // Handle for simulation
+                const simDuration = 200; // matching simDuration in simulatePlayback
+                window.simTime = simDuration * percentage;
             }
         });
     }
