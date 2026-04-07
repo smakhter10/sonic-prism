@@ -536,7 +536,6 @@ img {
     position: relative;
     border-radius: 2rem;
     overflow: hidden;
-    scroll-snap-align: center;
 }
 
 .carousel-card img {
@@ -1325,6 +1324,30 @@ img {
 .carousel-card-featured .carousel-card-info { opacity: 0; pointer-events: none; }
 .carousel-card-side .carousel-card-overlay { opacity: 0; pointer-events: none; }
 .carousel-card-side .carousel-card-content { opacity: 0; pointer-events: none; }
-.carousel-container { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
-.carousel-card-side { opacity: 0.5; filter: blur(2px) grayscale(50%); transform: scale(0.85); width: 14rem; }
-.carousel-card-featured { opacity: 1; filter: blur(0px) grayscale(0%); transform: scale(1.05); width: 22rem; z-index: 20; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+.carousel-container { 
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-drag: none;
+    padding: 2rem 0;
+    width: max-content;
+    will-change: transform;
+}
+.carousel-card-side { 
+    opacity: 0.5; 
+    filter: blur(2px) grayscale(50%); 
+    transform: scale(0.85); 
+    width: 14rem; 
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.carousel-card-featured { 
+    opacity: 1; 
+    filter: blur(0px) grayscale(0%); 
+    transform: scale(1.05); 
+    width: 22rem; 
+    z-index: 20; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); 
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}

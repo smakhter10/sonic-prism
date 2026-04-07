@@ -582,82 +582,80 @@ function initPageScripts() {
     const carouselNextBtn = document.querySelector('.carousel-next');
     
     if (carouselContainer && carouselPrevBtn && carouselNextBtn) {
-        // --- 1. SETUP CLONES ---
-        const originalCards = Array.from(carouselContainer.children);
-        if (originalCards.length >= 3) {
-            const firstClone = originalCards[0].cloneNode(true);
-            const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
-            
-            carouselContainer.appendChild(firstClone);
-            carouselContainer.insertBefore(lastClone, carouselContainer.firstChild);
+        const cards = Array.from(carouselContainer.children);
+        let currentIndex = 1; // Default featured card (the 2nd one in [0, 1, 2])
+        let isDragging = false;
+        let startX, currentTranslate = 0, prevTranslate = 0;
+        let animationID;
 
-            // Updated cards list [CloneLast, 1, 2, 3, CloneFirst]
-            let currentIndex = 1; // Start on the real first card
-            let isAnimating = false;
-
-            const updateUI = (snap = false) => {
-                const cards = Array.from(carouselContainer.children);
-                // Calculate the true "original" index (1-3)
-                // [L, 1, 2, 3, F] -> index 1 is original 1, 2 is 2, 3 is 3
-                // If index is 0 (Clone L), it represents 3. If index is 4 (Clone F), it represents 1.
-                let activeIndex = currentIndex;
-                if (currentIndex === 0) activeIndex = originalCards.length;
-                if (currentIndex === originalCards.length + 1) activeIndex = 1;
-
-                cards.forEach((card, i) => {
-                    if (i === activeIndex) {
-                        card.className = 'carousel-card carousel-card-featured animate-float';
-                    } else {
-                        card.className = 'carousel-card carousel-card-side animate-float-delayed';
-                    }
-                });
-
-                const offset = -(currentIndex - 1) * 256; // 256px is the width + gap
-                if (snap) {
-                    carouselContainer.style.transition = 'none';
+        const updateUI = (index) => {
+            currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+            cards.forEach((card, i) => {
+                if (i === currentIndex) {
+                    card.className = 'carousel-card carousel-card-featured animate-float';
                 } else {
-                    carouselContainer.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                    card.className = 'carousel-card carousel-card-side animate-float-delayed';
                 }
-                carouselContainer.style.transform = `translateX(${offset}px)`;
+            });
+
+            // Calculate Translate: center the featured card
+            // 256px is width+gap. Index 1 should be at 0 offset if container is centered.
+            // Actually, we'll keep it simple: index 1 is translateX(0).
+            const offset = -(currentIndex - 1) * 256;
+            carouselContainer.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            carouselContainer.style.transform = `translateX(${offset}px)`;
+            prevTranslate = offset;
+        };
+
+        // --- Dragging Logic ---
+        carouselContainer.onmousedown = (e) => {
+            isDragging = true;
+            startX = e.pageX;
+            carouselContainer.style.transition = 'none';
+            carouselContainer.style.cursor = 'grabbing';
+        };
+
+        window.onmousemove = (e) => {
+            if (!isDragging) return;
+            const currentX = e.pageX;
+            const diff = currentX - startX;
+            currentTranslate = prevTranslate + diff;
+            carouselContainer.style.transform = `translateX(${currentTranslate}px)`;
+        };
+
+        window.onmouseup = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            carouselContainer.style.cursor = 'grab';
+            
+            const movedBy = currentTranslate - prevTranslate;
+            if (movedBy < -50 && currentIndex < cards.length - 1) currentIndex++;
+            else if (movedBy > 50 && currentIndex > 0) currentIndex--;
+
+            updateUI(currentIndex);
+        };
+
+        // --- Click-to-Focus ---
+        cards.forEach((card, index) => {
+            card.onclick = (e) => {
+                // Prevent click during drag if moved significantly
+                if (Math.abs(currentTranslate - prevTranslate) > 5) {
+                    e.preventDefault();
+                }
+                updateUI(index);
             };
+        });
 
-            carouselNextBtn.onclick = () => {
-                if (isAnimating) return;
-                isAnimating = true;
-                currentIndex++;
-                updateUI();
+        // --- Button Logic ---
+        carouselPrevBtn.onclick = () => updateUI(currentIndex - 1);
+        carouselNextBtn.onclick = () => updateUI(currentIndex + 1);
 
-                setTimeout(() => {
-                    if (currentIndex > originalCards.length) {
-                        currentIndex = 1;
-                        updateUI(true);
-                    }
-                    isAnimating = false;
-                }, 600);
-            };
-
-            carouselPrevBtn.onclick = () => {
-                if (isAnimating) return;
-                isAnimating = true;
-                currentIndex--;
-                updateUI();
-
-                setTimeout(() => {
-                    if (currentIndex < 1) {
-                        currentIndex = originalCards.length;
-                        updateUI(true);
-                    }
-                    isAnimating = false;
-                }, 600);
-            };
-
-            // Initialize
-            carouselContainer.style.display = 'flex';
-            carouselContainer.style.justifyContent = 'flex-start';
-            carouselContainer.style.width = 'max-content';
-            carouselContainer.style.overflow = 'visible';
-            updateUI(true);
-        }
+        // Initial Setup
+        carouselContainer.style.cursor = 'grab';
+        carouselContainer.style.display = 'flex';
+        carouselContainer.style.justifyContent = 'flex-start';
+        carouselContainer.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+        updateUI(currentIndex);
     }
     
     // Smooth scrolling
