@@ -1,8 +1,9 @@
 <aside class="sidebar" id="sidebar">
     <!-- Logo -->
     <div class="sidebar-logo">
-        <span class="logo-text">Sonic Prism</span>
-        <span class="logo-icon material-symbols-outlined">music_note</span>
+        <a href="index.html" style="display: block; width: 100%;">
+            <img src="assets/images/logo.png" alt="Sonic Prism" style="width: 140px; height: auto; object-fit: contain;">
+        </a>
     </div>
     
     <!-- Main Navigation -->
