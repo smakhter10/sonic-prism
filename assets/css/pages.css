@@ -916,7 +916,13 @@
 /* SEARCH IDLE UI */
 .search-idle-state { display: none; }
 .search-idle-state.active { display: block; }
-.browse-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;}
+.browse-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 .category-card { position: relative; height: 180px; border-radius: 0.75rem; overflow: hidden; padding: 1rem; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s; }
 .category-card:hover { transform: scale(1.02); }
 .category-card h3 { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 1.5rem; color: white; margin: 0; }
@@ -926,7 +932,7 @@
 .recommended-card { display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.02); cursor: pointer; }
 .recommended-card img { width: 4rem; height: 4rem; border-radius: 0.5rem; object-fit: cover; }
 /* SEARCH GLOBAL STYLES */
-.search-container { padding: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+.search-container { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; }
 .search-input-wrapper { position: relative; margin-bottom: 3rem; }
 .search-input-large { width: 100%; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 2px solid transparent; padding: 1.25rem 1.5rem 1.25rem 4rem; color: white; font-size: 1.25rem; font-family: "Inter", sans-serif; transition: all 0.3s ease; }
 .search-input-large:focus { background: rgba(255,255,255,0.15); border-color: rgba(29, 185, 84, 0.5); outline: none; box-shadow: 0 0 20px rgba(29, 185, 84, 0.2); }

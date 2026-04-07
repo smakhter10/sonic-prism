@@ -582,63 +582,82 @@ function initPageScripts() {
     const carouselNextBtn = document.querySelector('.carousel-next');
     
     if (carouselContainer && carouselPrevBtn && carouselNextBtn) {
-        let isAnimating = false;
+        // --- 1. SETUP CLONES ---
+        const originalCards = Array.from(carouselContainer.children);
+        if (originalCards.length >= 3) {
+            const firstClone = originalCards[0].cloneNode(true);
+            const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
+            
+            carouselContainer.appendChild(firstClone);
+            carouselContainer.insertBefore(lastClone, carouselContainer.firstChild);
 
-        function updateClasses() {
-            Array.from(carouselContainer.children).forEach((card, i) => {
-                card.className = i === 1 
-                    ? 'carousel-card carousel-card-featured animate-float' 
-                    : 'carousel-card carousel-card-side animate-float-delayed';
-            });
+            // Updated cards list [CloneLast, 1, 2, 3, CloneFirst]
+            let currentIndex = 1; // Start on the real first card
+            let isAnimating = false;
+
+            const updateUI = (snap = false) => {
+                const cards = Array.from(carouselContainer.children);
+                // Calculate the true "original" index (1-3)
+                // [L, 1, 2, 3, F] -> index 1 is original 1, 2 is 2, 3 is 3
+                // If index is 0 (Clone L), it represents 3. If index is 4 (Clone F), it represents 1.
+                let activeIndex = currentIndex;
+                if (currentIndex === 0) activeIndex = originalCards.length;
+                if (currentIndex === originalCards.length + 1) activeIndex = 1;
+
+                cards.forEach((card, i) => {
+                    if (i === activeIndex) {
+                        card.className = 'carousel-card carousel-card-featured animate-float';
+                    } else {
+                        card.className = 'carousel-card carousel-card-side animate-float-delayed';
+                    }
+                });
+
+                const offset = -(currentIndex - 1) * 256; // 256px is the width + gap
+                if (snap) {
+                    carouselContainer.style.transition = 'none';
+                } else {
+                    carouselContainer.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                }
+                carouselContainer.style.transform = `translateX(${offset}px)`;
+            };
+
+            carouselNextBtn.onclick = () => {
+                if (isAnimating) return;
+                isAnimating = true;
+                currentIndex++;
+                updateUI();
+
+                setTimeout(() => {
+                    if (currentIndex > originalCards.length) {
+                        currentIndex = 1;
+                        updateUI(true);
+                    }
+                    isAnimating = false;
+                }, 600);
+            };
+
+            carouselPrevBtn.onclick = () => {
+                if (isAnimating) return;
+                isAnimating = true;
+                currentIndex--;
+                updateUI();
+
+                setTimeout(() => {
+                    if (currentIndex < 1) {
+                        currentIndex = originalCards.length;
+                        updateUI(true);
+                    }
+                    isAnimating = false;
+                }, 600);
+            };
+
+            // Initialize
+            carouselContainer.style.display = 'flex';
+            carouselContainer.style.justifyContent = 'flex-start';
+            carouselContainer.style.width = 'max-content';
+            carouselContainer.style.overflow = 'visible';
+            updateUI(true);
         }
-
-        carouselPrevBtn.onclick = () => {
-            if (isAnimating || carouselContainer.children.length < 3) return;
-            isAnimating = true;
-
-            const last = carouselContainer.lastElementChild;
-            carouselContainer.insertBefore(last, carouselContainer.firstElementChild);
-            
-            carouselContainer.style.transition = 'none';
-            // 14rem (side card) + 2rem (gap) = 16rem = 256px
-            carouselContainer.style.transform = `translateX(-256px)`;
-            
-            updateClasses();
-
-            void carouselContainer.offsetWidth;
-
-            carouselContainer.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
-            carouselContainer.style.transform = `translateX(0px)`;
-            
-            setTimeout(() => { isAnimating = false; }, 500);
-        };
-
-        carouselNextBtn.onclick = () => {
-            if (isAnimating || carouselContainer.children.length < 3) return;
-            isAnimating = true;
-
-            carouselContainer.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
-            carouselContainer.style.transform = `translateX(-256px)`;
-
-            const cards = Array.from(carouselContainer.children);
-            cards[0].className = 'carousel-card carousel-card-side animate-float-delayed'; 
-            cards[1].className = 'carousel-card carousel-card-side animate-float-delayed'; 
-            cards[2].className = 'carousel-card carousel-card-featured animate-float'; 
-
-            setTimeout(() => {
-                carouselContainer.style.transition = 'none';
-                carouselContainer.style.transform = `translateX(0px)`;
-                carouselContainer.appendChild(carouselContainer.firstElementChild);
-                updateClasses();
-                isAnimating = false;
-            }, 500);
-        };
-        
-        // Remove native smooth scroll snapping config to cleanly run our infinite custom transition logic
-        carouselContainer.style.overflowX = 'visible';
-        carouselContainer.style.justifyContent = 'center';
-
-        updateClasses();
     }
     
     // Smooth scrolling
