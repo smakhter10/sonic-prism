@@ -153,15 +153,15 @@
                     <div class="trending-item">
                         <div class="trending-item-info">
                             <span class="trending-number">1</span>
-                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiNziwfoWBrnLP-3LgWb_PAtdovPwfdwtHhjsqEED9Z5g_kPiBVZP75SKgvHiB-_xUPNdFNMEhvRxqCRr1a4sM-FYUdh803HjFCYK0YR9i3tx8ovtRVx_PnCdbt220VI6gy4wHeHxf-B-BB4VFev391oGnGpz1Ja42TwjFC7DCl6m4MpDq3AXzks2GIqEM_2tgVri64eHujsHINUqdgmF-vRV1Q2BLpzRpWyGgdG-6gj-yzfdBIxXK4n_3GEjG606yKEjanEmktl0" alt="Midnight in Paris">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4Oo80WZq7yaI2AJNHqplhE1Sjbft5HTIMg4bWkEvh-xCOyvujJ4KqeB0WnyNU0B11OuDD1BjuQ6bPiltBbQwOdTCyVYXubxCl15hSWFcgpJSSc1lp-6TQJ130ni8lvg6P05-FNvcMgcJjQFdDZQ4UXwBEBeYVQzgg0g5bQ2QS_jwmvxttK16iJoLcubvO4gt0y2fCgs7BsqnenW7aWKfGxPy_aivq0cfhfPFIzUWTwGVIlq6BejprlO6nyfw7s6J1uzyHYrrxVc" alt="Neon Velocity">
                             <div class="trending-text">
-                                <h5>Midnight in Paris</h5>
-                                <p>The Jazz Quintet</p>
+                                <h5>Neon Velocity</h5>
+                                <p>Etheric Stream</p>
                             </div>
                         </div>
                         <div class="trending-actions">
                             <span class="trending-duration">3:42</span>
-                            <button class="icon-btn favorite-btn">
+                            <button class="icon-btn favorite-btn" data-id="s1">
                                 <span class="material-symbols-outlined">favorite</span>
                             </button>
                             <button class="icon-btn more-btn">
@@ -174,15 +174,15 @@
                     <div class="trending-item">
                         <div class="trending-item-info">
                             <span class="trending-number">2</span>
-                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_xjm7UICdvnHO_MifhkUIA6PaulzUxcQjXUQwIuxh_dexGaqb06CIl9tyoCVNiHulRuaRwHjn1Y06zk2ZPj6s6pXg6e_A11_JR0APbd32y4bmr2rwznneUqsxOX1zkffYUMbXGQZsGz9nDnDiOUmiAxkdgTmBmfnJis080gH-5Ut93BT_B5_BjT_TejrT3ilua_4F6TZ-n-sAoBdNl_icLDWNEpigxJLKh-HLL-GPLCs_qUMSeQOWXQa6ycleHf35-MZuEqAz-HE" alt="Solar Flare">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1QGZKe3qEcYwsuZgu2TaDQ_25Qd1aXWeyifU7XQaratk5kkw7t3g5yv-s7D6eI4dv7RNJACn8JEcMRlCGLGljRWUdYnFiDHdupHJQPw8s4-8-BKOvq1t5vvTws1gulCpwIGERydjLDXs-N7bGp9-lMU2_X01UEDgIVXHh9qUnQzw8EABJotR9-Okrsqabgycw_KCZE_CNWCSFdlb4v6LoKWYyiB2_fJ5XgW9qMY0yqVUfKFm1_cOb7oc0W0PfOYHm3_c7AZuB57U" alt="Subterranean Beats">
                             <div class="trending-text">
-                                <h5>Solar Flare</h5>
-                                <p>Neon Pulse</p>
+                                <h5>Subterranean Beats</h5>
+                                <p>The Foundation</p>
                             </div>
                         </div>
                         <div class="trending-actions">
-                            <span class="trending-duration">4:15</span>
-                            <button class="icon-btn favorite-btn">
+                            <span class="trending-duration">5:18</span>
+                            <button class="icon-btn favorite-btn" data-id="s2">
                                 <span class="material-symbols-outlined">favorite</span>
                             </button>
                             <button class="icon-btn more-btn">

@@ -68,28 +68,42 @@ function isSongLiked(songId) {
 }
 
 function syncHeartIcons() {
-    document.querySelectorAll('.favorite-btn, .fav-icon, .player-heart').forEach(btn => {
-        // We need to know which song this icon belongs to.
-        // For simplicity in this SPA, we check the closest data-id or the current playing song if it's the player heart.
-        const songId = btn.getAttribute('data-id') || (AppState.currentQueue[AppState.currentTrackIndex]?.id);
-        if (songId && isSongLiked(songId)) {
-            btn.classList.add('active');
-            btn.style.color = 'var(--primary)';
-            btn.textContent = 'favorite'; // Filled icon
-        } else {
-            btn.classList.remove('active');
-            btn.style.color = 'inherit';
-            btn.textContent = 'favorite'; // Usually outline is handled by CSS or font-variation
+    // Select all potential heart icon containers/elements
+    document.querySelectorAll('.favorite-btn, .fav-icon, .player-heart, .btn-icon-circle').forEach(btn => {
+        const icon = btn.querySelector('.material-symbols-outlined') || (btn.classList.contains('material-symbols-outlined') ? btn : null);
+        if (!icon) return;
+
+        // Check if this button has a specific data-id, or if it's the player heart (current track)
+        const songId = btn.getAttribute('data-id') || (btn.classList.contains('player-heart') ? AppState.currentQueue[AppState.currentTrackIndex]?.id : null);
+        
+        if (songId) {
+            const liked = isSongLiked(songId);
+            icon.style.fontVariationSettings = liked ? "'FILL' 1" : "'FILL' 0";
+            if (liked) {
+                icon.style.color = 'var(--primary)';
+            } else {
+                icon.style.color = ''; // Reset to default
+            }
         }
     });
+}
 
-    // Handle heart icon in the main player specifically if needed
-    const playerHeart = document.querySelector('.player-heart span');
-    if (playerHeart) {
-        const current = AppState.currentQueue[AppState.currentTrackIndex];
-        playerHeart.style.fontVariationSettings = isSongLiked(current?.id) ? "'FILL' 1" : "'FILL' 0";
-        playerHeart.style.color = isSongLiked(current?.id) ? 'var(--primary)' : 'inherit';
-    }
+function bindHeartButtons() {
+    // Find all heart containers that aren't already bound
+    document.querySelectorAll('.favorite-btn, .fav-icon, .player-heart, .btn-icon-circle').forEach(btn => {
+        const icon = btn.querySelector('.material-symbols-outlined') || (btn.classList.contains('material-symbols-outlined') ? btn : null);
+        if (!icon) return;
+
+        const songId = btn.getAttribute('data-id');
+        if (songId && !btn.dataset.bound) {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleLike(songId);
+            };
+            btn.dataset.bound = "true";
+        }
+    });
 }
 
 // ======================================
@@ -808,4 +822,8 @@ function initPageScripts() {
             if(tgt) tgt.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
+
+    // Favorites handling
+    bindHeartButtons();
+    syncHeartIcons();
 }

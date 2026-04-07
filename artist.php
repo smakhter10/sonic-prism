@@ -72,7 +72,7 @@
                                 <span>Midnight Spectrum</span>
                             </div>
                             <div class="col-streams hidden-mobile">4,203,190</div>
-                            <div class="col-actions"><span class="material-symbols-outlined fav-icon">favorite</span></div>
+                            <div class="col-actions"><span class="material-symbols-outlined fav-icon" data-id="s5">favorite</span></div>
                             <div class="col-time">3:42</div>
                         </div>
                         
@@ -87,7 +87,7 @@
                                 <span>Neon Horizon</span>
                             </div>
                             <div class="col-streams hidden-mobile">2,940,211</div>
-                            <div class="col-actions"><span class="material-symbols-outlined fav-icon">favorite</span></div>
+                            <div class="col-actions"><span class="material-symbols-outlined fav-icon" data-id="s6">favorite</span></div>
                             <div class="col-time">4:15</div>
                         </div>
                         
@@ -102,7 +102,7 @@
                                 <span>Prism Drift</span>
                             </div>
                             <div class="col-streams hidden-mobile">1,502,334</div>
-                            <div class="col-actions"><span class="material-symbols-outlined fav-icon">favorite</span></div>
+                            <div class="col-actions"><span class="material-symbols-outlined fav-icon" data-id="s7">favorite</span></div>
                             <div class="col-time">3:18</div>
                         </div>
                     </div>

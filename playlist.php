@@ -85,6 +85,9 @@
                         <div class="col-date hidden-tablet">2 days ago</div>
                         <div class="col-time">
                             <span>3:42</span>
+                            <button class="icon-btn favorite-btn mr-2" data-id="s1">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
                             <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
                         </div>
                     </div>
@@ -103,6 +106,9 @@
                         <div class="col-date hidden-tablet">Oct 12, 2023</div>
                         <div class="col-time">
                             <span>5:18</span>
+                            <button class="icon-btn favorite-btn mr-2" data-id="s2">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
                             <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
                         </div>
                     </div>
@@ -121,6 +127,9 @@
                         <div class="col-date hidden-tablet">Oct 10, 2023</div>
                         <div class="col-time">
                             <span>4:05</span>
+                            <button class="icon-btn favorite-btn mr-2" data-id="s3">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
                             <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
                         </div>
                     </div>
@@ -139,6 +148,9 @@
                         <div class="col-date hidden-tablet">Oct 8, 2023</div>
                         <div class="col-time">
                             <span>6:22</span>
+                            <button class="icon-btn favorite-btn mr-2" data-id="s4">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
                             <button class="more-options-btn"><span class="material-symbols-outlined">more_vert</span></button>
                         </div>
                     </div>
