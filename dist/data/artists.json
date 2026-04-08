@@ -1,0 +1,30 @@
+[
+    {
+        "id": "a1",
+        "name": "Elena Gray",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCYQeI_TJ4LnqxuTbSSy6GDE8rEA5SW2EbOVmRP3P6k6v0XVoKV5fHJvK9SJ1H2KPb-HMvUrL1vKOas9M98gRwQo36luY0f16QYlgc32S_-b_Kd9Dk5e0K7-aCiYu_OPoApgNrWHvuJFJlXpImOJcV5PXSXJNFEuIDmCJnTQMPC_31CWy9Z8sN2iU8hKd3CnaISgcrgS_lavqLkiOhwW2lPO7UiByt1JhzXEWvJwSZ_IFIFE2XzQ5ohGMnFnfK2oyjb3rmlcBEtgnw",
+        "listeners": "2,482,903",
+        "song_ids": ["s1", "s2"]
+    },
+    {
+        "id": "a2",
+        "name": "The Architect",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDgvRuzwvHFTF8O2-0GLmY8lUAECl2RMl4Wx7e87hFuRbTOIdcVv9XX0mjooc4gQGB1h3TS5VukwP1S5OyouLwnz3JEXWlKE70m0sUGtZCt5eKZvPSJeGQ4hYQYxCdzu5wwiL746_YkTke4XKgW07q1sgdqNrkzOjDrGO0OXvnX1_OS53jbOiYmJC33a4BP5hWpfh1jABeaZx80FBVqIQhz1GPLBmnnY7jCA1aTOIx9Noxr4ZSnOxtoTyWSD5Govi_iRY43oQC5PwU",
+        "listeners": "1,190,000",
+        "song_ids": ["s3"]
+    },
+    {
+        "id": "a3",
+        "name": "Sola",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBEdKHIKLeFVuuNhlKNWzWUzwsLRfYzCnQ6_7QAsf6-vmKHWjGf5SCLlS2UovTsBro1yYaZXnmmaEg573SrgE5YeiokmDMvYSZMXu-EXqnXR__iWJYSKeGwn5DylkoI5imUvfXckhv0TNyGjjn4r3V5Kz3kM20OsM9sRgIHeOwlEMg4mJzQiMDGp-BQYZrcUefiZDjzU_Lh9RiympWOT648C6UU6nX3RQ8Qc8KjlZyJzTWUTELDwKslbVQBFb_pGcTNDr-LAgyjy9s",
+        "listeners": "843,200",
+        "song_ids": ["s4"]
+    },
+    {
+        "id": "a4",
+        "name": "Julian Knox",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDHrKJXDS1w2DHO-YuMlTn2IE4_kMeUPCr8aePF4_x1_zLUWJd7J6IFcql6JPRCmWqsraTsx7g3ZUS6HnYZ8BUZMD8XD5O-4sUmajCU436sXvCTr5X2FaMUOWbZjjTE7I3KG-T74PWI8FhWrpUXWeb7SzI99ySbVlz4fz6Ru_laGFsoaoIgcDiilfqzGjMUe9ZUXZdauLmkxTnk-EpUhXA3UKLa-Qt5illO-t6FuxWCl1IaMvmuxZ1hnvO3I4XqX4vzxLPMC7cikvY",
+        "listeners": "3,482,903",
+        "song_ids": ["s5", "s6"]
+    }
+]

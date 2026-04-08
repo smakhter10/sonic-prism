@@ -1,4 +1,10 @@
 const fs = require('fs');
+const path = require('path');
+
+// Ensure dist directory exists
+if (!fs.existsSync('dist')) {
+    fs.mkdirSync('dist');
+}
 
 const sidebar = fs.readFileSync('components/sidebar.php', 'utf8');
 const header = fs.readFileSync('components/header.php', 'utf8');
@@ -42,11 +48,21 @@ function compileFile(filename) {
     }
     
     const outputName = filename.replace('.php', '.html');
-    fs.writeFileSync(outputName, content);
-    console.log(outputName + ' generated.');
+    fs.writeFileSync(path.join('dist', outputName), content);
+    console.log(outputName + ' generated in dist/.');
 }
 
 const filesToCompile = ['index.php', 'library.php', 'playlist.php', 'artist.php', 'artist-top.php', 'search.php'];
 for (const file of filesToCompile) {
     compileFile(file);
 }
+
+// Copy assets and data to dist
+console.log('Copying assets and data...');
+if (fs.existsSync('assets')) {
+    fs.cpSync('assets', 'dist/assets', { recursive: true });
+}
+if (fs.existsSync('data')) {
+    fs.cpSync('data', 'dist/data', { recursive: true });
+}
+console.log('Build complete!');

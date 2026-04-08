@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Prism - Home</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <link rel="stylesheet" href="assets/css/pages.css?v=2">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+    <!-- Logo -->
+    <div class="sidebar-logo">
+        <a href="index.html" style="display: block; width: 100%;">
+            <img src="assets/images/logo.png" alt="Sonic Prism" style="width: 140px; height: auto; object-fit: contain;">
+        </a>
+    </div>
+    
+    <!-- Main Navigation -->
+    <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link active">
+            <span class="material-symbols-outlined">home</span>
+            <span class="nav-text">Home</span>
+        </a>
+        
+        <a href="search.html" class="nav-link">
+            <span class="material-symbols-outlined">search</span>
+            <span class="nav-text">Search</span>
+        </a>
+        
+        <a href="library.html" class="nav-link">
+            <span class="material-symbols-outlined">library_music</span>
+            <span class="nav-text">Library</span>
+        </a>
+        
+        <!-- Playlists Section -->
+        <div class="nav-section-divider">
+            <span class="nav-section-title">Playlists</span>
+        </div>
+        
+        <a href="#" class="nav-link">
+            <span class="material-symbols-outlined">add_box</span>
+            <span class="nav-text">Create Playlist</span>
+        </a>
+        
+        <a href="#" class="nav-link">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="nav-text">Liked Songs</span>
+        </a>
+    </nav>
+    
+    <!-- User Profile -->
+    <div class="sidebar-profile">
+        <div class="profile-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGzt3RE6mzmLuVX2bwtz0L0tGP7j90ar3tVcqx_5Ws_dFH-dKhsnIseiSb1fPsWA023zjyZXgDnLXSMW3wE07H3OlwAlRVOgF8R2SYLyXTsO3QG8TTyh5PjJeM85qfQmNzMzXkoEqQkhuEbun12VqjDCImDpRLZMjn8WuoDyaQwCa1U_BVnvCNQeuMBB8kejIOPaMbUjC5H1Iauab1wBvrg8V8R_YvlCVYjMc7vkPvQLVk_TFovBpnlkudgdaeETkwn-YFXfJMmU0" alt="User Profile" class="profile-avatar">
+            <div class="profile-info">
+                <span class="profile-name">Alex Rivera</span>
+                <span class="profile-status">Premium Member</span>
+            </div>
+        </div>
+    </div>
+</aside>
+
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-header">
+    <div class="header-left">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" class="search-input" placeholder="Search for songs...">
+        </div>
+    </div>
+    
+    <div class="header-right">
+        <!-- Notifications -->
+        <button class="header-icon-btn">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-dot"></span>
+        </button>
+        
+        <!-- Settings -->
+        <button class="header-icon-btn">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+    </div>
+</header>
+
+        
+        <!-- Page Content -->
+        <div class="content-wrapper" id="app-content">
+            <!-- Hero Carousel Section -->
+            <section class="section-carousel">
+                <div class="section-header">
+                    <h2 class="section-title">Recommended for You</h2>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn carousel-prev">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button class="carousel-btn carousel-next">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <!-- Left Card -->
+                    <div class="carousel-card carousel-card-side">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARXxJy8pFonLywDDLxjt6YDroWCA88835hcq2c7LZ5vWX9rzDbx_aWYSLj_fy0HMHY8f_wqXri5aI_xVdcG0_2ggIV1u-VEUPY206Gz-wvg7rGS1-xp_92caKG3U3M5MFZ-uq272ZobG1vkJsnY3SJ06gmHiwsWCiIG8KkYjM2Lr6Pxdkp11raAHzC_4Wab1I_tRMvv2XhMy4p6ZqmmC04nU1M9qKDw-dgq8I-qldNSRLyDdnN9afV4cPr00UeWVQW5f6NZHdMj_s" alt="Cyber Resonance">
+                        <div class="carousel-card-info">
+                            <h4>Cyber Resonance</h4>
+                            <p>Synthwave Mix</p>
+                        </div>
+                        <div class="carousel-card-overlay"></div>
+                        <div class="carousel-card-content">
+                            <div class="carousel-card-text">
+                                <h3>Cyber Resonance</h3>
+                                <p>Synthwave Mix</p>
+                            </div>
+                            <button class="play-btn play-btn-large">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Center Card (Featured) -->
+                    <div class="carousel-card carousel-card-featured">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiNziwfoWBrnLP-3LgWb_PAtdovPwfdwtHhjsqEED9Z5g_kPiBVZP75SKgvHiB-_xUPNdFNMEhvRxqCRr1a4sM-FYUdh803HjFCYK0YR9i3tx8ovtRVx_PnCdbt220VI6gy4wHeHxf-B-BB4VFev391oGnGpz1Ja42TwjFC7DCl6m4MpDq3AXzks2GIqEM_2tgVri64eHujsHINUqdgmF-vRV1Q2BLpzRpWyGgdG-6gj-yzfdBIxXK4n_3GEjG606yKEjanEmktl0" alt="Echoes of Midnight">
+                        <div class="carousel-card-info">
+                            <h4>Echoes of Midnight</h4>
+                            <p>Jon Hickman</p>
+                        </div>
+                        <div class="carousel-card-overlay"></div>
+                        <div class="carousel-card-content">
+                            <div class="carousel-card-text">
+                                <h3>Echoes of Midnight</h3>
+                                <p>Jon Hickman</p>
+                            </div>
+                            <button class="play-btn play-btn-large">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Card -->
+                    <div class="carousel-card carousel-card-side">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCGquVu1pzDVTKZ_3uUOS2Qn-seleDAyRJssnNtnPxec3FcP1PutGb1ccCT08MkSijiOsv-1pe43s2We7QOaL8KyUFlepV6GlRSN-O3DFSNDKs5FrkcUjjLS1nxoypfcJdwO3gyCNBo9p8rSpvL4CgHgL2I3ZN67Dqn1WkLGBGs6P_0B5wFZBG9IyZkjIFGF_66TWc60C5ybjGqvdH9uwHdROtUN6OL2CMVcB_qb3SVfQlPJr-w9RyOguY1HX8eHT2WxaJCPWAkyo" alt="Live Energy">
+                        <div class="carousel-card-info">
+                            <h4>Live Energy</h4>
+                            <p>Concert</p>
+                        </div>
+                        <div class="carousel-card-overlay"></div>
+                        <div class="carousel-card-content">
+                            <div class="carousel-card-text">
+                                <h3>Live Energy</h3>
+                                <p>Concert</p>
+                            </div>
+                            <button class="play-btn play-btn-large">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Made For You Section -->
+            <section class="section-grid animate-content-row" style="animation-delay: 0.2s;">
+                <div class="section-header">
+                    <h2 class="section-title">Made For You</h2>
+                    <a href="#" class="see-all-link">See All</a>
+                </div>
+                
+                <div class="playlist-grid">
+                    <div class="playlist-card">
+    <div class="playlist-card-image">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKiOBT9XVRAs6UzMwxxP-qYXm0Yt6uu6gAc_eUDgrYZjhjQUpcwpKwQsqYmfdI3pANuHE157RPCjDzr_i98egPjvMfOmORGKQdUasnOb0NkWm5iQiC3oflTclAW67W9yghUQUguk-8si0tbhanBtMvDE_8mJ9D6l4EMYxpyZtKoOTBcfMDNPjf-KfyRAchfHW_GSU8CQ-2FxEYputBbRiRUeBffuOGqiGpgKjFN637KS9KYoiCuZ9d01nHWehRcO902oKc4nJAbRc" alt="Focus Flow">
+        <button class="play-btn">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    </div>
+    <div class="playlist-card-content">
+        <h4 class="playlist-title">Focus Flow</h4>
+        <p class="playlist-description">Lofi beats for deep work</p>
+    </div>
+</div>
+
+<div class="playlist-card">
+    <div class="playlist-card-image">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCGquVu1pzDVTKZ_3uUOS2Qn-seleDAyRJssnNtnPxec3FcP1PutGb1ccCT08MkSijiOsv-1pe43s2We7QOaL8KyUFlepV6GlRSN-O3DFSNDKs5FrkcUjjLS1nxoypfcJdwO3gyCNBo9p8rSpvL4CgHgL2I3ZN67Dqn1WkLGBGs6P_0B5wFZBG9IyZkjIFGF_66TWc60C5ybjGqvdH9uwHdROtUN6OL2CMVcB_qb3SVfQlPJr-w9RyOguY1HX8eHT2WxaJCPWAkyo" alt="On Repeat">
+        <button class="play-btn">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    </div>
+    <div class="playlist-card-content">
+        <h4 class="playlist-title">On Repeat</h4>
+        <p class="playlist-description">Your top tracks from this week</p>
+    </div>
+</div>
+
+<div class="playlist-card">
+    <div class="playlist-card-image">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuChn9iIH-ZoDjCciN7aE6jqMIFANp4uJMy_dAe1ka_qOaw62oMFMy4pgLMLrKKlbhaTlfPWsCwb1MRdxCPzq6LkYUCRN9wL2wlC7gz2daAD4VfKOdxjxUwR_yiT_ppaZ_2oeak0OW3uIdsLzCrUeOt63U9mPUcuLXFVxLvmR0Y9Odvzw9IfgQkZr1bh7zxXw3PUUDhp2C47htASDIZh6G3prtw-MJGVp9KkZYXJx3ZNxaEBdK3XurDFFF8CU0BaG3h2c0ZEodLYAxE" alt="Discover Weekly">
+        <button class="play-btn">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    </div>
+    <div class="playlist-card-content">
+        <h4 class="playlist-title">Discover Weekly</h4>
+        <p class="playlist-description">New music tailored to you</p>
+    </div>
+</div>
+
+<div class="playlist-card">
+    <div class="playlist-card-image">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwycoqEU9Dw-Tsdd5fNmoU-TywjZB11WeK5ZHCJyTm2MZk4rUz5CJxi5vX_PvlgqeHyDyqCXZmBMKJGe0vToAISMZFkDKjpnF9_EPlDUEPAqRSvBz3Mn5fLEO0AzBSDK716zMYcV3T1DFZJaNlMTkNO0gl_iQRpf07M_DlW9mr4Rfe3MACaXJZiG4XO1dR5gYg6p65Tg8y4LuvSNPVPjrQYfyKvVGKN_tKp2-zMkbiyNjUlBIpwLBX-afcJeedN6Fa2mszl2qUlK0" alt="Ambient Dreams">
+        <button class="play-btn">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    </div>
+    <div class="playlist-card-content">
+        <h4 class="playlist-title">Ambient Dreams</h4>
+        <p class="playlist-description">Lose yourself in soundscapes</p>
+    </div>
+</div>
+
+<div class="playlist-card">
+    <div class="playlist-card-image">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-j_rgVjTcQBv_LxOgYCuTh9cuqzsnkrzCQS-5BJV_bsIS2_HtYWS9HgEi_NFwRz9S-hoN0YwX71uCEM4Wld3qY1nITdAiCdk0UIlkByVtrAVZyC7ldeo9UV9Nt06yCA5V98PqXToXAp_I79-xK_xWecYBFM-FX5iArQYXLiGm5RS3HbsrruBi88vgB6rs5J9HKsdwRE5og6QkuK2838FZMv94yzqNu_s_VTds0nEh5O_ttO8_-XO4pSgsxLmxY5VZ-dv2201-t5E" alt="Summit Path">
+        <button class="play-btn">
+            <span class="material-symbols-outlined">play_arrow</span>
+        </button>
+    </div>
+    <div class="playlist-card-content">
+        <h4 class="playlist-title">Summit Path</h4>
+        <p class="playlist-description">Echo Valley</p>
+    </div>
+</div>
+
+
+                </div>
+            </section>
+            
+            <!-- Trending Now Section -->
+            <section class="section-trending animate-content-row" style="animation-delay: 0.4s;">
+                <div class="section-header">
+                    <h2 class="section-title">Trending Now</h2>
+                </div>
+                
+                <div class="trending-grid">
+                    <!-- Trending Item 1 -->
+                    <div class="trending-item">
+                        <div class="trending-item-info">
+                            <span class="trending-number">1</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4Oo80WZq7yaI2AJNHqplhE1Sjbft5HTIMg4bWkEvh-xCOyvujJ4KqeB0WnyNU0B11OuDD1BjuQ6bPiltBbQwOdTCyVYXubxCl15hSWFcgpJSSc1lp-6TQJ130ni8lvg6P05-FNvcMgcJjQFdDZQ4UXwBEBeYVQzgg0g5bQ2QS_jwmvxttK16iJoLcubvO4gt0y2fCgs7BsqnenW7aWKfGxPy_aivq0cfhfPFIzUWTwGVIlq6BejprlO6nyfw7s6J1uzyHYrrxVc" alt="Neon Velocity">
+                            <div class="trending-text">
+                                <h5>Neon Velocity</h5>
+                                <p>Etheric Stream</p>
+                            </div>
+                        </div>
+                        <div class="trending-actions">
+                            <span class="trending-duration">3:42</span>
+                            <button class="icon-btn favorite-btn" data-id="s1">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                            <button class="icon-btn more-btn">
+                                <span class="material-symbols-outlined">more_horiz</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Trending Item 2 -->
+                    <div class="trending-item">
+                        <div class="trending-item-info">
+                            <span class="trending-number">2</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1QGZKe3qEcYwsuZgu2TaDQ_25Qd1aXWeyifU7XQaratk5kkw7t3g5yv-s7D6eI4dv7RNJACn8JEcMRlCGLGljRWUdYnFiDHdupHJQPw8s4-8-BKOvq1t5vvTws1gulCpwIGERydjLDXs-N7bGp9-lMU2_X01UEDgIVXHh9qUnQzw8EABJotR9-Okrsqabgycw_KCZE_CNWCSFdlb4v6LoKWYyiB2_fJ5XgW9qMY0yqVUfKFm1_cOb7oc0W0PfOYHm3_c7AZuB57U" alt="Subterranean Beats">
+                            <div class="trending-text">
+                                <h5>Subterranean Beats</h5>
+                                <p>The Foundation</p>
+                            </div>
+                        </div>
+                        <div class="trending-actions">
+                            <span class="trending-duration">5:18</span>
+                            <button class="icon-btn favorite-btn" data-id="s2">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                            <button class="icon-btn more-btn">
+                                <span class="material-symbols-outlined">more_horiz</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recommended Artists Section -->
+            <section class="section-artists animate-content-row" style="animation-delay: 0.6s;">
+                <div class="section-header">
+                    <h2 class="section-title">Recommended Artists</h2>
+                </div>
+                
+                <div class="artists-grid">
+                    <!-- Artist 1 -->
+                    <div class="artist-card" onclick="navigateTo('artist.html?id=a1')">
+                        <div class="artist-image">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQeI_TJ4LnqxuTbSSy6GDE8rEA5SW2EbOVmRP3P6k6v0XVoKV5fHJvK9SJ1H2KPb-HMvUrL1vKOas9M98gRwQo36luY0f16QYlgc32S_-b_Kd9Dk5e0K7-aCiYu_OPoApgNrWHvuJFJlXpImOJcV5PXSXJNFEuIDmCJnTQMPC_31CWy9Z8sN2iU8hKd3CnaISgcrgS_lavqLkiOhwW2lPO7UiByt1JhzXEWvJwSZ_IFIFE2XzQ5ohGMnFnfK2oyjb3rmlcBEtgnw" alt="Elena Gray">
+                        </div>
+                        <span class="artist-name">Elena Gray</span>
+                    </div>
+                    
+                    <!-- Artist 2 -->
+                    <div class="artist-card" onclick="navigateTo('artist.html?id=a2')">
+                        <div class="artist-image">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgvRuzwvHFTF8O2-0GLmY8lUAECl2RMl4Wx7e87hFuRbTOIdcVv9XX0mjooc4gQGB1h3TS5VukwP1S5OyouLwnz3JEXWlKE70m0sUGtZCt5eKZvPSJeGQ4hYQYxCdzu5wwiL746_YkTke4XKgW07q1sgdqNrkzOjDrGO0OXvnX1_OS53jbOiYmJC33a4BP5hWpfh1jABeaZx80FBVqIQhz1GPLBmnnY7jCA1aTOIx9Noxr4ZSnOxtoTyWSD5Govi_iRY43oQC5PwU" alt="The Architect">
+                        </div>
+                        <span class="artist-name">The Architect</span>
+                    </div>
+                    
+                    <!-- Artist 3 -->
+                    <div class="artist-card" onclick="navigateTo('artist.html?id=a3')">
+                        <div class="artist-image">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEdKHIKLeFVuuNhlKNWzWUzwsLRfYzCnQ6_7QAsf6-vmKHWjGf5SCLlS2UovTsBro1yYaZXnmmaEg573SrgE5YeiokmDMvYSZMXu-EXqnXR__iWJYSKeGwn5DylkoI5imUvfXckhv0TNyGjjn4r3V5Kz3kM20OsM9sRgIHeOwlEMg4mJzQiMDGp-BQYZrcUefiZDjzU_Lh9RiympWOT648C6UU6nX3RQ8Qc8KjlZyJzTWUTELDwKslbVQBFb_pGcTNDr-LAgyjy9s" alt="Sola">
+                        </div>
+                        <span class="artist-name">Sola</span>
+                    </div>
+                    
+                    <!-- Artist 4 -->
+                    <div class="artist-card" onclick="navigateTo('artist.html?id=a4')">
+                        <div class="artist-image">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHrKJXDS1w2DHO-YuMlTn2IE4_kMeUPCr8aePF4_x1_zLUWJd7J6IFcql6JPRCmWqsraTsx7g3ZUS6HnYZ8BUZMD8XD5O-4sUmajCU436sXvCTr5X2FaMUOWbZjjTE7I3KG-T74PWI8FhWrpUXWeb7SzI99ySbVlz4fz6Ru_laGFsoaoIgcDiilfqzGjMUe9ZUXZdauLmkxTnk-EpUhXA3UKLa-Qt5illO-t6FuxWCl1IaMvmuxZ1hnvO3I4XqX4vzxLPMC7cikvY" alt="Julian Knox">
+                        </div>
+                        <span class="artist-name">Julian Knox</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Music Player -->
+    <footer class="music-player">
+    <!-- Currently Playing -->
+    <div class="player-left">
+        <div class="now-playing-thumbnail">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuByes9g8Pr4SEk5AIegJWqwgUCAUMPOw3azms_Of3v0bG8fNpzPesXlR5KqGGaTlVAuRBTgK6r6VAPvZbyZn8l1q4njwXcQpudYrxHv7papSuHCsCRfnQB85AxIei_N28UoN0KM9-S9Vf_kuV7wG_p7Euhn9GwKNKS_8zL2iON9Vb7imaXou1JSGFDqsXeZFuqano2LfRagDWn1mPhr52A_Mg9Zs7exeDkvL8g1zjdOEJZzyVWLXS7CM_jRjQrUWkxUPSPWfHWU8zI" alt="Now Playing">
+        </div>
+        <div class="now-playing-info">
+            <span class="now-playing-title">Solar Flare</span>
+            <span class="now-playing-artist">Neon Pulse</span>
+        </div>
+        <button class="icon-btn player-heart">
+            <span class="material-symbols-outlined">favorite</span>
+        </button>
+    </div>
+    
+    <!-- Playback Controls -->
+    <div class="player-center">
+        <div class="playback-controls">
+            <button class="control-btn shuffle-btn">
+                <span class="material-symbols-outlined">shuffle</span>
+            </button>
+            
+            <button class="control-btn prev-btn">
+                <span class="material-symbols-outlined">skip_previous</span>
+            </button>
+            
+            <button class="control-btn play-btn-main">
+                <span class="material-symbols-outlined">play_circle</span>
+            </button>
+            
+            <button class="control-btn next-btn">
+                <span class="material-symbols-outlined">skip_next</span>
+            </button>
+            
+            <button class="control-btn repeat-btn">
+                <span class="material-symbols-outlined">repeat</span>
+            </button>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <span class="progress-time">1:24</span>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="progress-handle"></div>
+            </div>
+            <span class="progress-time">4:15</span>
+        </div>
+    </div>
+    
+    <!-- Secondary Controls -->
+    <div class="player-right">
+        <button class="icon-btn">
+            <span class="material-symbols-outlined">lyrics</span>
+        </button>
+        
+        <button class="icon-btn">
+            <span class="material-symbols-outlined">queue_music</span>
+        </button>
+        
+        <div class="volume-control">
+            <span class="material-symbols-outlined">volume_up</span>
+            <div class="volume-bar">
+                <div class="volume-fill"></div>
+            </div>
+        </div>
+        
+        <button class="icon-btn">
+            <span class="material-symbols-outlined">fullscreen</span>
+        </button>
+    </div>
+</footer>
+
+    
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
