@@ -176,11 +176,11 @@ function renderDynamicContent() {
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
     
-    if (path.includes('playlist.html')) {
+    if (path.includes('playlist')) {
         renderPlaylistPage(params.get('id') || 'p1');
-    } else if (path.includes('artist.html') || path.includes('artist-top.html')) {
+    } else if (path.includes('artist')) {
         renderArtistPage(params.get('id') || 'a1');
-    } else if (path.includes('search.html')) {
+    } else if (path.includes('search')) {
         setupSearchPage();
         const query = params.get('q');
         if (query) {
@@ -203,12 +203,16 @@ function updateSidebarActive() {
     const links = document.querySelectorAll('.nav-link');
     links.forEach(link => {
         const href = link.getAttribute('href');
-        if (href && path.includes(href.replace('.php', '.html'))) {
-            link.classList.add('active');
-            link.style.color = 'var(--primary)';
-        } else {
-            link.classList.remove('active');
-            link.style.color = 'var(--on-surface-variant)';
+        if (href) {
+            const cleanHref = href.replace('.php', '').replace('.html', '');
+            const cleanPath = path.replace('.html', '').replace('.php', '');
+            if ((cleanPath === '/' && cleanHref === 'index') || (cleanPath !== '/' && cleanPath.includes(cleanHref))) {
+                link.classList.add('active');
+                link.style.color = 'var(--primary)';
+            } else {
+                link.classList.remove('active');
+                link.style.color = 'var(--on-surface-variant)';
+            }
         }
     });
 }

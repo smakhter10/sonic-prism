@@ -1,0 +1,9 @@
+{
+  "name": "sonic-prism",
+  "version": "1.0.0",
+  "description": "A premium music streaming experience",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {}
+}
