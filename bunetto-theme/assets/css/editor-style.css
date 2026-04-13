@@ -1,0 +1,142 @@
+/*
+ * Bunetto Editor Styles
+ * Makes the Gutenberg editor match the dark frontend
+ */
+
+/* Editor body */
+.editor-styles-wrapper {
+  background: #0a0a0a !important;
+  color: #f0ece4;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Headings */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.editor-styles-wrapper h1 {
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.editor-styles-wrapper h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 6vw, 68px);
+  letter-spacing: 8px;
+  line-height: 1;
+}
+
+.editor-styles-wrapper h3 {
+  font-size: 24px;
+}
+
+/* Paragraphs */
+.editor-styles-wrapper p {
+  color: #f0ece4;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Links */
+.editor-styles-wrapper a {
+  color: #c9a96e;
+}
+.editor-styles-wrapper a:hover {
+  color: #e8d5a3;
+}
+
+/* Buttons */
+.editor-styles-wrapper .wp-block-button__link {
+  background: #c9a96e;
+  color: #0a0a0a;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.4);
+  transition: all 0.3s;
+}
+.editor-styles-wrapper .wp-block-button__link:hover {
+  background: #e8d5a3;
+}
+
+/* Ghost button style */
+.editor-styles-wrapper .is-style-outline .wp-block-button__link {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* Cover block matches hero */
+.editor-styles-wrapper .wp-block-cover {
+  border-radius: 0 0 28px 28px;
+  min-height: 560px;
+}
+.editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
+  max-width: 1160px;
+}
+
+/* Separator */
+.editor-styles-wrapper .wp-block-separator {
+  border-color: #1e1e1e;
+  opacity: 1;
+}
+
+/* Group with dark-2 background */
+.editor-styles-wrapper .has-dark-2-background-color {
+  background-color: #111111;
+}
+.editor-styles-wrapper .has-dark-3-background-color {
+  background-color: #1a1a1a;
+}
+
+/* Quote block */
+.editor-styles-wrapper .wp-block-quote {
+  border-left-color: #c9a96e;
+  color: #888880;
+}
+
+/* List block */
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+  color: #f0ece4;
+}
+
+/* Image block */
+.editor-styles-wrapper .wp-block-image img {
+  border-radius: 14px;
+}
+
+/* Columns */
+.editor-styles-wrapper .wp-block-columns {
+  gap: 28px;
+}
+
+/* Section eyebrow style for paragraphs with small class */
+.editor-styles-wrapper .has-xs-font-size {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #c9a96e;
+}
+
+/* Scrollbar in editor */
+.editor-styles-wrapper::-webkit-scrollbar { width: 4px; }
+.editor-styles-wrapper::-webkit-scrollbar-track { background: #111111; }
+.editor-styles-wrapper::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
